@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 💌</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+
+  /* BACKGROUND FOTO */
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('bg.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+/* OPEN CARD */
+.open{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffd6e8;
+  z-index:10;
+}
+.open button{
+  padding:20px 45px;
+  border:none;
+  border-radius:40px;
+  font-size:18px;
+  background:#ff6b9d;
+  color:white;
+  cursor:pointer;
+}
+
+/* CARD */
+.card{
+  background:white;
+  max-width:760px;
+  margin:60px auto;
+  padding:35px;
+  border-radius:25px;
+}
+h1{
+  text-align:center;
+  color:#ff6b9d;
+}
+p{
+  line-height:1.9;
+  color:#444;
+  margin-bottom:18px;
+}
+.ps{
+  font-style:italic;
+  color:#777;
+}
+
+/* LOVE */
+.love{
+  position:fixed;
+  top:-10px;
+  font-size:20px;
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+}
+
+/* MUSIC BUTTON */
+.music{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ff6b9d;
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:30px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="one-only.mp3" type="audio/mpeg">
+</audio>
+<button class="music" onclick="playMusic()">🎵 Play Music</button>
+
+<!-- OPEN -->
+<div class="open" id="open">
+  <button onclick="openCard()">💌 Open Card</button>
+</div>
+
+<!-- CARD -->
+<div class="card" id="card">
+<h1>Happy Birthday, my favorite person💌</h1>
+
+<p>Hai bebe🙋🏻‍♀️, Today is not just the day you were born, but the day the world was blessed with someone as kind, strong, and wonderful as you &lt;(˶ᵔᵕᵔ˶)&gt;. I’m so grateful to have you in my life („• ֊ •„). You make my days brighter, my heart calmer, and my smile wider just by being yourself ◝(ᵔᵕᵔ)◜.</p>
+
+<p>Thank you for loving me in ways I never knew I needed, for being patient with me, and for always trying your best, even when things are hard (˶˃ ᵕ ˂˶). I’m so proud of the person you are and the person you’re becoming ( ˶ˆᗜˆ˵ ).</p>
+
+<p>I hope this new year of your life brings you happiness, success, good health, and everything your heart has been wishing for. May all your dreams slowly turn into reality (˶ ᵔ ̫ ᵔ ˶). Remember that you are never alone, because you have me, always. ദ്ദി◝ ⩊ ◜.ᐟ</p>
+
+<p>Once again, happy birthday, my favorite person. I love you more than words can ever explain ૮₍´｡ᵔ ꈊ ᵔ｡₎ა .</p>
+
+<p class="ps">PS : Hehehe i tau pasti u pusing bacanya karena pakai bahasa inggis (˵¬ᴗ¬˵) dibawah ini versi indonesianya yaa beb, biar u ga buka google translate buat pahamin kata-kata i (≖⩊≖)</p>
+
+<p>Hai bebe, hari ini bukan cuma hari lahir u, tapi hari di mana dunia diberkahi sama hadirnya seseorang yang sangat baik, kuat, dan luar biasa kaya u &lt;(˶ᵔᵕᵔ˶)&gt;. i bersyukur banget bisa milikin u dihidup i („• ֊ •„).</p>
+
+<p>Terima kasih karena sudah mencintai i dengan cara yang bahkan ga pernah i sadarin i butuhin, karena selalu sabar sama i, dan karena selalu berusaha jadi yang terbaik, meskipun keadaan lagi sulit (˶˃ ᵕ ˂˶).</p>
+
+<p>I harap tahun baru dalam hidup u ini bisa membawa kebahagiaan, kesuksesan, kesehatan, dan semua hal yang selama ini u harapkan (˶ ᵔ ̫ ᵔ ˶). Semoga semua mimpi u perlahan jadi kenyataan. Inget yaa beb u ga pernah sendirian, karena u selalu punya i.</p>
+
+<p>Sekali lagi, selamat ulang tahun buat orang favorit i. I love you lebih dari apa pun yang bisa dijelaskan pakai kata-kata ૮₍´｡ᵔ ꈊ ᵔ｡₎ა .</p>
+</div>
+
+<script>
+function openCard(){
+  document.getElementById("open").style.display="none";
+  document.getElementById("card").style.display="block";
+}
+
+function playMusic(){
+  document.getElementById("music").play();
+}
+
+setInterval(()=>{
+  let l=document.createElement("div");
+  l.className="love";
+  l.innerHTML="💗";
+  l.style.left=Math.random()*100+"vw";
+  l.style.animationDuration=(Math.random()*3+4)+"s";
+  document.body.appendChild(l);
+  setTimeout(()=>l.remove(),7000);
+},300);
+</script>
+
+</body>
+</html>
